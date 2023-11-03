@@ -1,1 +1,5 @@
+# local environment vars
 .env
+
+# local development outputs
+output/

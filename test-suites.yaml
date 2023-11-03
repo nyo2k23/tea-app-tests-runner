@@ -1,9 +1,9 @@
 version: "3"
 services:
-  vendor-portal:
+  user-login:
     image: mdmsn/tea-selenium
     environment:
-    - BROWSER
+    - BROWSER=chrome
     - HUB_HOST=hub    
     - THREAD_COUNT=3
     - TEST_SUITE=user-login.xml
