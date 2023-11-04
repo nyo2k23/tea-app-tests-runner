@@ -4,7 +4,7 @@ services:
     image: mdmsn/tea-selenium
     environment:
     - BROWSER
-    - HUB_HOST   
+    - HUB_HOST=hub  
     - THREAD_COUNT=2
     - TEST_SUITE=user-login.xml
     - UI_URL
