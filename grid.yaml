@@ -8,13 +8,13 @@ services:
     depends_on:
     - hub
     deploy:
-      replicas: 1
-    env_file: .env
+      replicas: 0
+#    env_file: .env
   firefox:
     image: seleniarm/node-firefox:4.10
     shm_size: '2g'
     depends_on:
     - hub
     deploy:
-      replicas: 1
-    env_file: .env
+      replicas: 0
+#    env_file: .env

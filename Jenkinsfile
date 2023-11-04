@@ -8,6 +8,14 @@ pipeline{
 
     stages{
 
+        environment{
+            SE_EVENT_BUS_HOST=${TEA_SELENIUM_SE_HUB}
+            SE_EVENT_BUS_PUBLISH_PORT=${TEA_SELENIUM_SE_PUB_PORT}
+            SE_EVENT_BUS_SUBSCRIBE_PORT=${TEA_SELENIUM_SE_SUB_PORT}
+            SE_NODE_OVERRIDE_MAX_SESSIONS=${TEA_SELENIUM_SE_OVERRIDE_MAX_SESSIONS}
+            SE_NODE_MAX_SESSIONS=${TEA_SELENIUM_SE_NODE_SESSIONS}
+            UI_URL=${TEA_SELENIUM_UI_URL}
+        }
         stage('Start Grid'){
             steps{
                 sh "docker-compose -f grid.yaml up --scale ${params.BROWSER}=2 -d"
