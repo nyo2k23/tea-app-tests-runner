@@ -19,7 +19,7 @@ pipeline{
         stage('Run Test'){
             
             steps{
-                sh "docker-compose -f test-suites.yaml up --pull=always"
+                sh "docker-compose -f test-suites.yaml up --pull=always --remove-orphans"
                 script {
                     if(fileExists('output/user-login/testng-failed.xml')
                     // || fileExists('output/another-test-suite/testng-failed.xml')
