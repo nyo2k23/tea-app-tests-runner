@@ -3,7 +3,7 @@ services:
   user-login:
     image: mdmsn/tea-selenium
     environment:
-    - BROWSER=chrome
+    - BROWSER
     - HUB_HOST=hub    
     - THREAD_COUNT=3
     - TEST_SUITE=user-login.xml
