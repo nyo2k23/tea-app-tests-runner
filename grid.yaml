@@ -3,10 +3,6 @@ services:
   selenium_hub:
     container_name: selenium_hub
     image: seleniarm/hub:4.10
-    ports:
-      - "4442:4442"
-      - "4443:4443"
-      - "4444:4444"
   chrome:
     image: seleniarm/node-chromium:4.10
     shm_size: 2g
