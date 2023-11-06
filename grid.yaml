@@ -15,7 +15,6 @@ services:
     deploy:
       replicas: 1
     environment:
-      # - HUB_HOST=hub
       - SE_EVENT_BUS_HOST=hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
@@ -29,20 +28,8 @@ services:
     deploy:
       replicas: 1
     environment:
-      # - HUB_HOST=hub
       - SE_EVENT_BUS_HOST=hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       - SE_NODE_OVERRIDE_MAX_SESSIONS=true
       - SE_NODE_MAX_SESSIONS=1
-  user-login:
-    image: mdmsn/tea-selenium:latest
-    depends_on:
-    - hub
-    environment:
-    - HUB_HOST=hub
-    - THREAD_COUNT=2
-    - TEST_SUITE=user-login.xml
-    - UI_URL
-    volumes:
-    - ./output/user-login:/home/tea-app-tests/test-output

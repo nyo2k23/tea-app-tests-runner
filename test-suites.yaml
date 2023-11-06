@@ -1,12 +1,11 @@
-# version: "3"
-# services:
-  # user-login:
-  #   image: mdmsn/tea-selenium:latest
-  #   environment:
-  #   - HUB_HOST=localhost
-  #   - BROWSER
-  #   - THREAD_COUNT=2
-  #   - TEST_SUITE=user-login.xml
-  #   - UI_URL
-  #   volumes:
-  #   - ./output/user-login:/home/tea-app-tests/test-output
+version: "3"
+services:
+  user-login:
+    image: mdmsn/tea-selenium:latest
+    environment:
+    - HUB_HOST=hub
+    - THREAD_COUNT=2
+    - TEST_SUITE=user-login.xml
+    - UI_URL
+    volumes:
+    - ./output/user-login:/home/tea-app-tests/test-output
