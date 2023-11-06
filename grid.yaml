@@ -1,7 +1,7 @@
 version: "3"
 services:
-  hub:
-    container_name: hub
+  selenium_hub:
+    container_name: selenium_hub
     image: seleniarm/hub:4.10
     ports:
       - "4442:4442"
@@ -11,11 +11,11 @@ services:
     image: seleniarm/node-chromium:4.10
     shm_size: 2g
     depends_on:
-    - hub
+    - selenium_hub
     deploy:
       replicas: 1
     environment:
-      - SE_EVENT_BUS_HOST=hub
+      - SE_EVENT_BUS_HOST=selenium_hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       - SE_NODE_OVERRIDE_MAX_SESSIONS=true
@@ -24,11 +24,11 @@ services:
     image: seleniarm/node-firefox:4.10
     shm_size: 2g
     depends_on:
-    - hub
+    - selenium_hub
     deploy:
       replicas: 1
     environment:
-      - SE_EVENT_BUS_HOST=hub
+      - SE_EVENT_BUS_HOST=selenium_hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       - SE_NODE_OVERRIDE_MAX_SESSIONS=true
