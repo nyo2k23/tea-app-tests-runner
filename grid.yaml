@@ -15,6 +15,7 @@ services:
     deploy:
       replicas: 1
     environment:
+      - HUB_HOST=hub
       - SE_EVENT_BUS_HOST=hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
@@ -28,6 +29,7 @@ services:
     deploy:
       replicas: 1
     environment:
+      - HUB_HOST=hub
       - SE_EVENT_BUS_HOST=hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
