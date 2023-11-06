@@ -19,6 +19,7 @@ pipeline{
         stage('Run Test'){
             
             steps{
+                // sh "export "
                 sh "docker-compose -f test-suites.yaml up --pull=always --remove-orphans"
                 script {
                     if(fileExists('output/user-login/testng-failed.xml')
