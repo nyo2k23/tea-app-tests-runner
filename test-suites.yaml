@@ -5,7 +5,7 @@ services:
     environment:
     - BROWSER
     - HUB_HOST=hub
-    - THREAD_COUNT=2
+    - THREAD_COUNT=1
     - TEST_SUITE=user-login.xml
     - UI_URL
     volumes:

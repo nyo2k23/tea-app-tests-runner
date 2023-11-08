@@ -9,7 +9,7 @@ services:
       - "4444:4444"
   chrome:
     image: seleniarm/node-chromium:4.10
-    shm_size: 2g
+    shm_size: 1g
     depends_on:
     - hub
     deploy:
@@ -19,10 +19,10 @@ services:
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       - SE_NODE_OVERRIDE_MAX_SESSIONS=true
-      - SE_NODE_MAX_SESSIONS=1
+      - SE_NODE_MAX_SESSIONS=2
   firefox:
     image: seleniarm/node-firefox:4.10
-    shm_size: 2g
+    shm_size: 1g
     depends_on:
     - hub
     deploy:
@@ -32,4 +32,4 @@ services:
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       - SE_NODE_OVERRIDE_MAX_SESSIONS=true
-      - SE_NODE_MAX_SESSIONS=1
+      - SE_NODE_MAX_SESSIONS=2
